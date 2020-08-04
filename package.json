@@ -1,0 +1,28 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Alvin Leung's UX UI portfolio",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvinleung/portfolio-website.git"
+  },
+  "author": "Alvin Leung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvinleung/portfolio-website/issues"
+  },
+  "homepage": "https://github.com/alvinleung/portfolio-website#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.1.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
