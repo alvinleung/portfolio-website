@@ -1,0 +1,542 @@
+/*
+ *
+ * A CSS file that mananges all the break points
+ * 
+ * Referenced Article
+ * https: //medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2
+ * 
+ */
+
+footer {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  padding-bottom: 2rem; }
+
+a {
+  display: inline-block;
+  /* https://cssanimation.rocks/animating-links/ */
+  color: #999;
+  text-decoration: none;
+  background-image: linear-gradient(#00f, #00f);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 0%;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-duration: 0.3s;
+  transition-property: background-size color opacity; }
+
+a:hover,
+a:focus,
+a.highlighted {
+  text-decoration: none;
+  background-size: 100% 100%;
+  color: #fff; }
+
+a:active {
+  opacity: 0.6; }
+
+/*
+ *  
+ * Handle recurring layouts in the website
+ * 
+ */
+/*
+ *
+ * A CSS file that mananges all the break points
+ * 
+ * Referenced Article
+ * https: //medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2
+ * 
+ */
+/*
+ *
+ * The main two columns layout grid of the website
+ * 
+ */
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas: "main";
+  column-gap: 1rem;
+  margin-left: 2rem;
+  margin-right: 0rem; }
+
+.main-container__side-bar {
+  display: none;
+  grid-area: side; }
+
+.main-container__main {
+  grid-area: main; }
+
+@media only screen and (min-width: 1100px) {
+  .main-container {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "side main main main main main main main main"; }
+  .main-container__side-bar {
+    display: block; } }
+
+.nav,
+.main-container__main {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #000; }
+
+/*
+ *
+ * layout grid
+ * 
+ */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 1rem; }
+  @media only screen and (min-width: 1100px) {
+    .content-grid {
+      grid-template-columns: 1fr 1fr; } }
+
+.content-grid__blurb {
+  max-width: 60ch; }
+
+/*
+ *
+ * typographic element layout
+ * 
+ */
+.content-block {
+  margin: 12rem 0rem 4rem; }
+
+/*
+ *
+ * images
+ * 
+ */
+.image-bleed-right {
+  object-fit: cover;
+  width: 100%; }
+
+
+.nav {
+  position: fixed; }
+
+.nav__nav-list {
+  list-style: none; }
+
+.nav__nav-link {
+  font-size: 1.5rem; }
+
+/*
+ * LANDING PAGE SPECIFIC STYLES
+ */
+/*
+ *
+ * A CSS file that mananges all the break points
+ * 
+ * Referenced Article
+ * https: //medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2
+ * 
+ */
+.hero {
+  margin-bottom: 16rem; }
+
+.hero__headline {
+  margin-top: 10vh;
+  max-width: 10ch;
+  line-height: 1.1em;
+  font-size: 64px; }
+  @media only screen and (min-width: 1100px) {
+    .hero__headline {
+      font-size: 6vw; } }
+
+/*
+ *
+ * Styling for project case study page
+ * 
+ */
+/*
+ *
+ * A CSS file that mananges all the break points
+ * 
+ * Referenced Article
+ * https: //medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2
+ * 
+ */
+h1,
+.h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 96px;
+  letter-spacing: -0.07em;
+  font-weight: bold;
+  margin-bottom: 2rem; }
+
+h2,
+.h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 48px;
+  letter-spacing: -0.04em;
+  font-weight: bold;
+  margin-bottom: 2rem; }
+
+h3,
+.h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 36px;
+  letter-spacing: -0.04em;
+  font-weight: bold;
+  margin-bottom: 2rem; }
+
+h4,
+.h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 2rem; }
+
+body,
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.07em;
+  margin-bottom: 2rem; }
+
+a {
+  font-family: "Inter", sans-serif; }
+
+.caption, .project-info-item__label {
+  font-size: 14px;
+  font-family: "Roboto Mono", sans-serif;
+  margin-bottom: 4rem; }
+
+.lead {
+  font-size: 36px;
+  letter-spacing: -0.07em; }
+
+.project-intro {
+  margin-bottom: 10vh; }
+  @media only screen and (min-width: 800px) {
+    .project-intro .project-intro__headline {
+      margin-top: 30vh; } }
+
+.project-intro__headline {
+  margin-bottom: 1rem; }
+
+.project-intro__blurb {
+  margin-bottom: 4rem; }
+
+.project-info-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 20rem;
+  column-gap: 1rem;
+  row-gap: 2vh; }
+  @media only screen and (min-width: 800px) {
+    .project-info-container {
+      max-width: 40rem;
+      grid-template-columns: repeat(4, 1fr); } }
+
+.project-info-item {
+  margin-right: 1rem; }
+  .project-info-item__label {
+    margin-bottom: 2vh; }
+
+/*
+ *  
+ * Handle recurring layouts in the website
+ * 
+ */
+/*
+ *
+ * A CSS file that mananges all the break points
+ * 
+ * Referenced Article
+ * https: //medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2
+ * 
+ */
+/*
+ *
+ * The main two columns layout grid of the website
+ * 
+ */
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas: "main";
+  column-gap: 1rem;
+  margin-left: 2rem;
+  margin-right: 0rem; }
+
+.main-container__side-bar {
+  display: none;
+  grid-area: side; }
+
+.main-container__main {
+  grid-area: main; }
+
+@media only screen and (min-width: 1100px) {
+  .main-container {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "side main main main main main main main main"; }
+  .main-container__side-bar {
+    display: block; } }
+
+.nav,
+.main-container__main {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #000; }
+
+/*
+ *
+ * layout grid
+ * 
+ */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 1rem; }
+  @media only screen and (min-width: 1100px) {
+    .content-grid {
+      grid-template-columns: 1fr 1fr; } }
+
+.content-grid__blurb {
+  max-width: 60ch; }
+
+/*
+ *
+ * typographic element layout
+ * 
+ */
+.content-block {
+  margin: 12rem 0rem 4rem; }
+
+/*
+ *
+ * images
+ * 
+ */
+.image-bleed-right {
+  object-fit: cover;
+  width: 100%; }
+
+.project-container {
+  margin-top: 2rem; }
+
+.project-item {
+  display: flex;
+  flex-direction: column-reverse;
+  color: #000;
+  background: none;
+  transition-property: color opacity; }
+  @media only screen and (min-width: 1100px) {
+    .project-item {
+      flex-direction: row; } }
+  .project-item:hover {
+    color: #00f; }
+  .project-item:active, .project-item:focus {
+    color: #00f; }
+  .project-item .project-item__description {
+    margin-right: 4rem;
+    max-width: 20rem; }
+    .project-item .project-item__description h2 {
+      margin-bottom: 0; }
+    .project-item .project-item__description .caption {
+      margin-bottom: 1rem; }
+    .project-item .project-item__description p {
+      margin-bottom: 4rem; }
+  .project-item .project-item__image {
+    display: block;
+    width: 100%;
+    height: 15rem;
+    margin-bottom: 1rem;
+    overflow: hidden; }
+    @media only screen and (min-width: 1100px) {
+      .project-item .project-item__image {
+        height: 28vw;
+        margin-bottom: 0rem; } }
+    .project-item .project-item__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition-property: transform;
+      transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      transition-duration: 500ms;
+      will-change: transform; }
+
+.project-item:hover .project-item__image img {
+  transform: scale(1.1); }
+
+/* 
+ * 
+ * CSS RESETS
+ * 
+ * Code adapted from Bootstrap 4 _reboot.css
+ * 
+ * SOURCE
+ * https: //github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
+ * 
+ */
+/* 
+ * remove the iphone touch area indicator in all interactive elements except links
+ */
+html {
+  -webkit-tap-highlight-color: transparent; }
+
+a {
+  -webkit-tap-highlight-color: default; }
+
+/* 
+ * text selection style
+ */
+::selection {
+  background-color: #00f;
+  color: #fff; }
+
+/* 
+ * make it smooth scrolling compatable
+ */
+html {
+  scroll-behavior: smooth; }
+
+/* 
+ *++++++++++++++++++++++
+ * 
+ * LAYOUT element resets
+ * 
+ * ++++++++++++++++++++++
+ */
+/* reset box-sizing with "inheritance" - https://css-tricks.com/box-sizing/ */
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+/* turn off all the default css collapsing margin behaviour */
+body {
+  margin: 0rem; }
+
+* {
+  margin: 0rem;
+  padding: 0rem;
+  box-sizing: border-box; }
+
+/* 
+ * +++++++++++++++++++++
+ * 
+ * IMAGE element resets
+ * 
+ *+++++++++++++++++++++
+ */
+/* remove the image margin */
+img {
+  display: block;
+  /* constraint it within the assigned block */
+  max-width: 100%;
+  height: auto; }
+
+/* 
+ *++++++++++++++++++++++++++++++++++++++++++++++++
+ * 
+ * Make footer stick to bottom of the page if the page is too short
+ * 
+ *++++++++++++++++++++++++++++++++++++++++++++++++
+ */
+body {
+  min-height: 100vh; }
+
+/* 
+ * +++++++++++++++++++++
+ * 
+ * FORM element resets
+ * 
+ *+++++++++++++++++++++
+ */
+/* add "hand" cursor to non-disabled button elements. */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="submit"]:not(:disabled) {
+  cursor: pointer; }
+
+/* 
+ *++++++++++++++++++++++++++++++++++++++++++++++++
+ * 
+ * Fix the Material Design icon alignment issue
+ * 
+ *++++++++++++++++++++++++++++++++++++++++++++++++
+ */
+.material-icons {
+  font-size: 1.2em;
+  display: inline-flex;
+  vertical-align: middle; }
+
+/* 
+ * 
+ * Trick adapted from the following link
+ * purpose is to stop the menu animation showing when window resizing
+ * https://css-tricks.com/stop-animations-during-window-resizing/
+ * 
+ * 
+ * Refer to index.js to see the javascript component of this fix
+ * 
+ */
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important; }
+
+h1,
+.h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 96px;
+  letter-spacing: -0.07em;
+  font-weight: bold;
+  margin-bottom: 2rem; }
+
+h2,
+.h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 48px;
+  letter-spacing: -0.04em;
+  font-weight: bold;
+  margin-bottom: 2rem; }
+
+h3,
+.h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 36px;
+  letter-spacing: -0.04em;
+  font-weight: bold;
+  margin-bottom: 2rem; }
+
+h4,
+.h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 2rem; }
+
+body,
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.07em;
+  margin-bottom: 2rem; }
+
+a {
+  font-family: "Inter", sans-serif; }
+
+.caption {
+  font-size: 14px;
+  font-family: "Roboto Mono", sans-serif;
+  margin-bottom: 4rem; }
+
+.lead {
+  font-size: 36px;
+  letter-spacing: -0.07em; }
+

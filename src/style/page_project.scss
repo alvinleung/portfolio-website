@@ -1,0 +1,63 @@
+/*
+ *
+ * Styling for project case study page
+ * 
+ */
+
+@import "breakpoint.scss";
+@import "variables.scss";
+@import "typography.scss";
+
+// ==================================
+//
+// the above-the-fold intro section
+//
+// ==================================
+
+.project-intro {
+  margin-bottom: 10vh;
+  @include viewportLargerThan($breakpoint-m) {
+    .project-intro__headline {
+      margin-top: 30vh;
+    }
+  }
+}
+
+.project-intro__headline {
+  margin-bottom: 1rem;
+}
+
+.project-intro__blurb {
+  margin-bottom: $spacing-m;
+}
+
+// ==================================
+//
+// project info inside header section
+//
+// ==================================
+.project-info-container {
+  display: grid;
+
+  // collapse the info area when screen is too small
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 20rem;
+  @include viewportLargerThan($breakpoint-m) {
+    max-width: 40rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  // define the gutters
+  column-gap: $spacing-gutter;
+  row-gap: 2vh;
+}
+.project-info-item {
+  margin-right: $spacing-gutter;
+
+  &__label {
+    @extend .caption;
+    margin-bottom: 2vh;
+  }
+  &__content {
+  }
+}

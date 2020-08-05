@@ -1,0 +1,92 @@
+/*
+ *  
+ * Handle recurring layouts in the website
+ * 
+ */
+
+@import "breakpoint.scss";
+@import "variables.scss";
+
+/*
+ *
+ * The main two columns layout grid of the website
+ * 
+ */
+
+$breakpoint-nav-collapse: 500px;
+
+// layout container
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas: "main";
+  column-gap: $spacing-gutter;
+
+  margin-left: 2rem;
+  margin-right: 0rem;
+}
+
+// navigation side bar
+.main-container__side-bar {
+  display: none;
+  grid-area: side;
+}
+// the main content section
+.main-container__main {
+  grid-area: main;
+}
+@include viewportLargerThan($breakpoint-l) {
+  .main-container {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "side main main main main main main main main";
+  }
+  .main-container__side-bar {
+    display: block;
+  }
+}
+
+// the visual style of the both
+.nav,
+.main-container__main {
+  margin-top: $section-spacing;
+  padding-top: $section-spacing;
+  border-top: $horizontal-sperator;
+}
+
+/*
+ *
+ * layout grid
+ * 
+ */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: $spacing-gutter;
+  @include viewportLargerThan($breakpoint-l) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.content-grid__blurb {
+  max-width: 60ch;
+}
+
+/*
+ *
+ * typographic element layout
+ * 
+ */
+.content-block {
+  margin: $spacing-xl 0rem $spacing-m;
+}
+
+/*
+ *
+ * images
+ * 
+ */
+
+.image-bleed-right {
+  object-fit: cover;
+  width: 100%;
+}

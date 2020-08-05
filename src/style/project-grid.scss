@@ -1,0 +1,80 @@
+//
+//
+//
+//
+@import "layout.scss";
+@import "variables.scss";
+
+.project-container {
+  margin-top: 2rem;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column-reverse;
+  @include viewportLargerThan($breakpoint-l) {
+    flex-direction: row;
+  }
+
+  // reset the default link style
+  color: $color-primary-darkest;
+  background: none;
+  transition-property: color opacity;
+
+  &:hover {
+    color: $color-accent;
+  }
+  &:active,
+  &:focus {
+    color: $color-accent;
+  }
+
+  .project-item__description {
+    margin-right: $spacing-m; // gutter size
+    max-width: 20rem;
+
+    h2 {
+      margin-bottom: 0;
+    }
+    .caption {
+      margin-bottom: $spacing-xs;
+    }
+    p {
+      margin-bottom: $spacing-m;
+    }
+  }
+  .project-item__image {
+    display: block;
+    width: 100%;
+    height: 15rem;
+    margin-bottom: $spacing-xs;
+
+    // the image height only scale with the viewport on larger screens
+    // to prevent it from getting to squished on mobile
+    @include viewportLargerThan($breakpoint-l) {
+      height: 28vw;
+      margin-bottom: 0rem;
+    }
+    overflow: hidden;
+
+    // the actual image inside the image wrapper
+    img {
+      // fit the whole parent container
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      // for the animation
+      transition-property: transform;
+      transition-timing-function: $easing--ease-out-expo; // ease out expo
+      transition-duration: 500ms;
+      will-change: transform;
+    }
+  }
+}
+
+.project-item:hover {
+  .project-item__image img {
+    transform: scale(1.1);
+  }
+}

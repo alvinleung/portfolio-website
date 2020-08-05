@@ -1,0 +1,71 @@
+@import "variables.scss";
+
+$font-family-main: "Inter", sans-serif;
+$font-family-secondary: "Roboto Mono", sans-serif;
+$vertical-spacing-l: 4rem;
+$vertical-spacing: 3rem;
+
+h1,
+.h1 {
+  font-family: $font-family-main;
+  font-size: 96px;
+  letter-spacing: -0.07em;
+  font-weight: bold;
+
+  margin-bottom: $spacing-s;
+}
+
+h2,
+.h2 {
+  font-family: $font-family-main;
+  font-size: 48px;
+  letter-spacing: -0.04em;
+  font-weight: bold;
+
+  margin-bottom: $spacing-s;
+}
+
+h3,
+.h3 {
+  font-family: $font-family-main;
+  font-size: 36px;
+  letter-spacing: -0.04em;
+  font-weight: bold;
+
+  margin-bottom: $spacing-s;
+}
+
+h4,
+.h4 {
+  font-family: $font-family-main;
+  font-size: 16px;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  margin-bottom: $spacing-s;
+}
+
+body,
+p {
+  font-family: $font-family-main;
+  font-size: 16px;
+  letter-spacing: 0.07em;
+
+  margin-bottom: $spacing-s;
+}
+
+a {
+  font-family: $font-family-main;
+}
+
+.caption {
+  font-size: 14px;
+  font-family: $font-family-secondary;
+  margin-bottom: $vertical-spacing-l;
+}
+
+.lead {
+  font-size: 36px;
+  letter-spacing: -0.07em;
+}

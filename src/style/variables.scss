@@ -1,0 +1,27 @@
+// colour schemes
+$color-primary-darkest: #000;
+$color-primary-dark: #999;
+$color-primary-lightest: #fff;
+$color-primary-lighter: #eee;
+$color-primary-light: #aaa;
+
+$color-accent: #00f;
+
+// animation utilities
+$easing--ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+// layout variables
+$horizontal-sperator: 2px solid #000;
+
+$section-spacing: 2rem;
+
+$spacing-xxs: 0.5rem;
+$spacing-xs: 1rem;
+$spacing-s: 2rem;
+$spacing-m: 4rem;
+$spacing-l: 8rem;
+$spacing-xl: 12rem;
+
+$spacing-gutter: 1rem;
+
+$size-grid-width: 10rem;

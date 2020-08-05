@@ -1,0 +1,21 @@
+/*
+ * LANDING PAGE SPECIFIC STYLES
+ */
+
+@import "breakpoint.scss";
+
+.hero {
+  margin-bottom: 16rem;
+}
+
+.hero__headline {
+  margin-top: 10vh;
+  max-width: 10ch;
+  line-height: 1.1em;
+
+  font-size: 64px;
+
+  @include viewportLargerThan($breakpoint-l) {
+    font-size: 6vw;
+  }
+}

@@ -1,0 +1,33 @@
+// table of content
+// - links
+// - buttons
+
+@import "variables.scss";
+
+a {
+  display: inline-block;
+
+  /* https://cssanimation.rocks/animating-links/ */
+  color: $color-primary-dark;
+  text-decoration: none;
+  background-image: linear-gradient($color-accent, $color-accent);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 0%;
+
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-duration: 0.3s;
+  transition-property: background-size color opacity;
+}
+
+a:hover,
+a:focus,
+a.highlighted {
+  text-decoration: none;
+  background-size: 100% 100%;
+  color: $color-primary-lightest;
+}
+
+a:active {
+  opacity: 0.6;
+}
