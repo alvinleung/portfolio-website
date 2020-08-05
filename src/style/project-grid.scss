@@ -53,7 +53,7 @@
     // to prevent it from getting to squished on mobile
     @include viewportLargerThan($breakpoint-l) {
       height: 28vw;
-      margin-bottom: 0rem;
+      margin-bottom: 1rem;
     }
     overflow: hidden;
 

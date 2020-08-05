@@ -14,7 +14,7 @@ const Router = {
   setup: () => {
     // prevent the browser refreshing
     const captureUnload = (e) => {
-      preventDefault();
+      // e.preventDefault();
       // Chrome requires returnValue to be set.
       e.returnValue = "";
     };

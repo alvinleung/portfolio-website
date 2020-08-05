@@ -50,7 +50,7 @@ body,
 p {
   font-family: $font-family-main;
   font-size: 16px;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.02em;
 
   margin-bottom: $spacing-s;
 }
@@ -68,4 +68,12 @@ a {
 .lead {
   font-size: 36px;
   letter-spacing: -0.07em;
+}
+
+.section-marker {
+  @extend .h4;
+  border-left: $horizontal-sperator;
+  padding-left: 0.5rem;
+  margin-left: 0rem;
+  margin-bottom: $spacing-m;
 }

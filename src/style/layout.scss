@@ -53,6 +53,14 @@ $breakpoint-nav-collapse: 500px;
   border-top: $horizontal-sperator;
 }
 
+.seperator-top {
+  border-top: $horizontal-sperator;
+}
+
+.seperator-bottom {
+  border-bottom: $horizontal-sperator;
+}
+
 /*
  *
  * layout grid
@@ -63,7 +71,7 @@ $breakpoint-nav-collapse: 500px;
   display: grid;
   grid-template-columns: 1fr;
   column-gap: $spacing-gutter;
-  @include viewportLargerThan($breakpoint-l) {
+  @include viewportLargerThan($breakpoint-m) {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -77,7 +85,14 @@ $breakpoint-nav-collapse: 500px;
  * 
  */
 .content-block {
-  margin: $spacing-xl 0rem $spacing-m;
+  max-width: 80rem;
+  margin: $spacing-xl $spacing-s $spacing-m 0rem;
+}
+
+.content-width {
+  width: auto;
+  max-width: 80rem;
+  width: 100%;
 }
 
 /*
@@ -89,4 +104,7 @@ $breakpoint-nav-collapse: 500px;
 .image-bleed-right {
   object-fit: cover;
   width: 100%;
+}
+
+.image-bleed-right--constraint-height {
 }

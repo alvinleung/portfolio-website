@@ -49,14 +49,14 @@
 
   // define the gutters
   column-gap: $spacing-gutter;
-  row-gap: 2vh;
+  row-gap: $spacing-m;
 }
 .project-info-item {
   margin-right: $spacing-gutter;
 
   &__label {
     @extend .caption;
-    margin-bottom: 2vh;
+    margin-bottom: $spacing-xs;
   }
   &__content {
   }
