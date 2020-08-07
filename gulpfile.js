@@ -11,6 +11,11 @@ gulp.task("dev", function () {
   gulp.watch("./src/script/*.js", gulp.series("js"));
 });
 
+gulp.task("build", function () {
+  gulp.start("sass");
+  gulp.start("js");
+});
+
 gulp.task("sass", function () {
   return gulp
     .src("./src/style/*.scss")
