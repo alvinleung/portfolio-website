@@ -110,7 +110,7 @@ a:active {
  */
 .content-block {
   max-width: 80rem;
-  margin: 12rem 2rem 4rem 0rem; }
+  margin: 8rem 2rem 4rem 0rem; }
 
 .content-width {
   width: auto;
@@ -125,6 +125,29 @@ a:active {
 .image-bleed-right {
   object-fit: cover;
   width: 100%; }
+
+/*
+ *
+ * Youtube Video/Vemeo Video
+ * 
+ * Original Code
+ * https://www.ostraining.com/blog/coding/responsive-videos/
+ * 
+ */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  width: 100%; }
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
 
 
 .nav {
@@ -210,8 +233,10 @@ body,
 p {
   font-family: "Inter", sans-serif;
   font-size: 16px;
-  letter-spacing: 0.02em;
-  margin-bottom: 2rem; }
+  letter-spacing: 0.04em;
+  line-height: 1.5em;
+  margin-top: 4rem;
+  margin-bottom: 4rem; }
 
 a {
   font-family: "Inter", sans-serif; }
@@ -219,10 +244,12 @@ a {
 .caption, .project-info-item__label {
   font-size: 14px;
   font-family: "Roboto Mono", sans-serif;
+  margin-top: 1rem;
   margin-bottom: 4rem; }
 
 .lead {
   font-size: 36px;
+  line-height: 1.2em;
   letter-spacing: -0.07em; }
 
 .section-marker {
@@ -258,6 +285,9 @@ a {
   margin-right: 1rem; }
   .project-info-item__label {
     margin-bottom: 1rem; }
+
+ul {
+  list-style: none; }
 
 /*
  *  
@@ -334,7 +364,7 @@ a {
  */
 .content-block {
   max-width: 80rem;
-  margin: 12rem 2rem 4rem 0rem; }
+  margin: 8rem 2rem 4rem 0rem; }
 
 .content-width {
   width: auto;
@@ -349,6 +379,29 @@ a {
 .image-bleed-right {
   object-fit: cover;
   width: 100%; }
+
+/*
+ *
+ * Youtube Video/Vemeo Video
+ * 
+ * Original Code
+ * https://www.ostraining.com/blog/coding/responsive-videos/
+ * 
+ */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  width: 100%; }
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
 
 .project-container {
   margin-top: 2rem; }
@@ -557,8 +610,10 @@ body,
 p {
   font-family: "Inter", sans-serif;
   font-size: 16px;
-  letter-spacing: 0.02em;
-  margin-bottom: 2rem; }
+  letter-spacing: 0.04em;
+  line-height: 1.5em;
+  margin-top: 4rem;
+  margin-bottom: 4rem; }
 
 a {
   font-family: "Inter", sans-serif; }
@@ -566,10 +621,12 @@ a {
 .caption {
   font-size: 14px;
   font-family: "Roboto Mono", sans-serif;
+  margin-top: 1rem;
   margin-bottom: 4rem; }
 
 .lead {
   font-size: 36px;
+  line-height: 1.2em;
   letter-spacing: -0.07em; }
 
 .section-marker {

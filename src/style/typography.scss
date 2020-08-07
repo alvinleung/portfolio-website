@@ -50,9 +50,10 @@ body,
 p {
   font-family: $font-family-main;
   font-size: 16px;
-  letter-spacing: 0.02em;
-
-  margin-bottom: $spacing-s;
+  letter-spacing: 0.04em;
+  line-height: 1.5em;
+  margin-top: $spacing-m;
+  margin-bottom: $spacing-m;
 }
 
 a {
@@ -62,11 +63,13 @@ a {
 .caption {
   font-size: 14px;
   font-family: $font-family-secondary;
+  margin-top: $spacing-xs;
   margin-bottom: $vertical-spacing-l;
 }
 
 .lead {
   font-size: 36px;
+  line-height: 1.2em;
   letter-spacing: -0.07em;
 }
 
