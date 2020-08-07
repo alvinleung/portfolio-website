@@ -16,7 +16,7 @@ const Router = {
     const captureUnload = (e) => {
       // e.preventDefault();
       // Chrome requires returnValue to be set.
-      e.returnValue = "";
+      // e.returnValue = "";
     };
     // init the router here
     window.addEventListener("beforeunload", captureUnload);
