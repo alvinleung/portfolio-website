@@ -71,12 +71,34 @@ $breakpoint-nav-collapse: 500px;
   display: grid;
   grid-template-columns: 1fr;
   column-gap: $spacing-gutter;
+
+  margin-bottom: $spacing-m;
+
   @include viewportLargerThan($breakpoint-m) {
     grid-template-columns: 1fr 1fr;
+  }
+
+  // add space between the collapsed column
+  // remove space
+  .content-grid__blurb:first-child {
+    padding-bottom: $spacing-m;
+  }
+  .content-grid__blurb:last-child {
+    padding-bottom: 0rem;
   }
 }
 .content-grid__blurb {
   max-width: 60ch;
+
+  & > *:first-child {
+    // remove the margin top of the first element so it respect the content block spacing
+    margin-top: 0rem;
+  }
+
+  & > *:last-child {
+    // remove the margin bottom of the last element so it respect the content block spacing
+    margin-bottom: 0rem;
+  }
 }
 
 /*
@@ -86,7 +108,18 @@ $breakpoint-nav-collapse: 500px;
  */
 .content-block {
   max-width: 80rem;
-  margin: $spacing-l $spacing-s $spacing-m 0rem;
+  width: 100%;
+  margin: $spacing-l 0rem $spacing-m;
+  padding-right: $spacing-s;
+
+  & > *:first-child {
+    // remove the margin top of the first element so it respect the content block spacing
+    margin-top: 0rem;
+  }
+  & > *:last-child {
+    // remove the margin bottom of the last element so it respect the content block spacing
+    margin-bottom: 0rem;
+  }
 }
 
 .content-width {

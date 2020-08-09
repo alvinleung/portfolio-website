@@ -18,7 +18,7 @@
   margin-bottom: 10vh;
   @include viewportLargerThan($breakpoint-m) {
     .project-intro__headline {
-      margin-top: 30vh;
+      margin-top: 10vh;
     }
   }
 }
@@ -28,6 +28,7 @@
 }
 
 .project-intro__blurb {
+  margin-top: $spacing-xs;
   margin-bottom: $spacing-m;
 }
 
@@ -61,7 +62,11 @@
   &__content {
   }
 }
-
+.highlighted-fact {
+  margin-top: $spacing-m;
+  padding-left: 1rem;
+  border-left: 2px solid $color-primary-darkest;
+}
 ul {
   list-style: none;
 }

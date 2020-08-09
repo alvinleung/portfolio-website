@@ -1,3 +1,5 @@
+//
+
 @import "variables.scss";
 
 $font-family-main: "Inter", sans-serif;
@@ -5,12 +7,26 @@ $font-family-secondary: "Roboto Mono", sans-serif;
 $vertical-spacing-l: 4rem;
 $vertical-spacing: 3rem;
 
+// line height crop mixin
+// https://medium.com/codyhouse/line-height-crop-a-simple-css-formula-to-remove-top-space-from-your-text-9c3de06d7c6f
+@mixin lineHeightCrop($line-height) {
+  &::before {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+}
+
 h1,
 .h1 {
   font-family: $font-family-main;
   font-size: 96px;
   letter-spacing: -0.07em;
   font-weight: bold;
+
+  line-height: 6rem;
 
   margin-bottom: $spacing-s;
 }
@@ -22,15 +38,20 @@ h2,
   letter-spacing: -0.04em;
   font-weight: bold;
 
+  line-height: 1.4em;
+
   margin-bottom: $spacing-s;
+  @include lineHeightCrop(1.6);
 }
 
 h3,
 .h3 {
   font-family: $font-family-main;
-  font-size: 36px;
+  font-size: 32px;
   letter-spacing: -0.04em;
   font-weight: bold;
+
+  line-height: 1rem;
 
   margin-bottom: $spacing-s;
 }
@@ -43,16 +64,18 @@ h4,
   text-transform: uppercase;
   font-weight: bold;
 
+  line-height: 1em;
+
   margin-bottom: $spacing-s;
 }
 
-body,
-p {
+p,
+body {
   font-family: $font-family-main;
   font-size: 16px;
   letter-spacing: 0.04em;
   line-height: 1.5em;
-  margin-top: $spacing-m;
+  margin-top: $spacing-s;
   margin-bottom: $spacing-m;
 }
 
@@ -69,8 +92,8 @@ a {
 
 .lead {
   font-size: 36px;
-  line-height: 1.2em;
-  letter-spacing: -0.07em;
+  line-height: 3rem;
+  letter-spacing: -0.05em;
 }
 
 .section-marker {

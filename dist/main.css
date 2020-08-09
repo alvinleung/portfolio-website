@@ -95,13 +95,22 @@ a:active {
 .content-grid {
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 1rem; }
+  column-gap: 1rem;
+  margin-bottom: 4rem; }
   @media only screen and (min-width: 800px) {
     .content-grid {
       grid-template-columns: 1fr 1fr; } }
+  .content-grid .content-grid__blurb:first-child {
+    padding-bottom: 4rem; }
+  .content-grid .content-grid__blurb:last-child {
+    padding-bottom: 0rem; }
 
 .content-grid__blurb {
   max-width: 60ch; }
+  .content-grid__blurb > *:first-child {
+    margin-top: 0rem; }
+  .content-grid__blurb > *:last-child {
+    margin-bottom: 0rem; }
 
 /*
  *
@@ -110,7 +119,13 @@ a:active {
  */
 .content-block {
   max-width: 80rem;
-  margin: 8rem 2rem 4rem 0rem; }
+  width: 100%;
+  margin: 8rem 0rem 4rem;
+  padding-right: 2rem; }
+  .content-block > *:first-child {
+    margin-top: 0rem; }
+  .content-block > *:last-child {
+    margin-bottom: 0rem; }
 
 .content-width {
   width: auto;
@@ -201,6 +216,7 @@ h1,
   font-size: 96px;
   letter-spacing: -0.07em;
   font-weight: bold;
+  line-height: 6rem;
   margin-bottom: 2rem; }
 
 h2,
@@ -209,14 +225,23 @@ h2,
   font-size: 48px;
   letter-spacing: -0.04em;
   font-weight: bold;
+  line-height: 1.4em;
   margin-bottom: 2rem; }
+  h2::before,
+  .h2::before {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - 1.6) * 0.5em); }
 
 h3,
 .h3 {
   font-family: "Inter", sans-serif;
-  font-size: 36px;
+  font-size: 32px;
   letter-spacing: -0.04em;
   font-weight: bold;
+  line-height: 1rem;
   margin-bottom: 2rem; }
 
 h4,
@@ -227,15 +252,16 @@ h4,
   letter-spacing: 0.065em;
   text-transform: uppercase;
   font-weight: bold;
+  line-height: 1em;
   margin-bottom: 2rem; }
 
-body,
-p {
+p,
+body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   letter-spacing: 0.04em;
   line-height: 1.5em;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 4rem; }
 
 a {
@@ -249,8 +275,8 @@ a {
 
 .lead {
   font-size: 36px;
-  line-height: 1.2em;
-  letter-spacing: -0.07em; }
+  line-height: 3rem;
+  letter-spacing: -0.05em; }
 
 .section-marker {
   border-left: 2px solid #000;
@@ -262,12 +288,13 @@ a {
   margin-bottom: 10vh; }
   @media only screen and (min-width: 800px) {
     .project-intro .project-intro__headline {
-      margin-top: 30vh; } }
+      margin-top: 10vh; } }
 
 .project-intro__headline {
   margin-bottom: 1rem; }
 
 .project-intro__blurb {
+  margin-top: 1rem;
   margin-bottom: 4rem; }
 
 .project-info-container {
@@ -285,6 +312,11 @@ a {
   margin-right: 1rem; }
   .project-info-item__label {
     margin-bottom: 1rem; }
+
+.highlighted-fact {
+  margin-top: 4rem;
+  padding-left: 1rem;
+  border-left: 2px solid #000; }
 
 ul {
   list-style: none; }
@@ -349,13 +381,22 @@ ul {
 .content-grid {
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 1rem; }
+  column-gap: 1rem;
+  margin-bottom: 4rem; }
   @media only screen and (min-width: 800px) {
     .content-grid {
       grid-template-columns: 1fr 1fr; } }
+  .content-grid .content-grid__blurb:first-child {
+    padding-bottom: 4rem; }
+  .content-grid .content-grid__blurb:last-child {
+    padding-bottom: 0rem; }
 
 .content-grid__blurb {
   max-width: 60ch; }
+  .content-grid__blurb > *:first-child {
+    margin-top: 0rem; }
+  .content-grid__blurb > *:last-child {
+    margin-bottom: 0rem; }
 
 /*
  *
@@ -364,7 +405,13 @@ ul {
  */
 .content-block {
   max-width: 80rem;
-  margin: 8rem 2rem 4rem 0rem; }
+  width: 100%;
+  margin: 8rem 0rem 4rem;
+  padding-right: 2rem; }
+  .content-block > *:first-child {
+    margin-top: 0rem; }
+  .content-block > *:last-child {
+    margin-bottom: 0rem; }
 
 .content-width {
   width: auto;
@@ -578,6 +625,7 @@ h1,
   font-size: 96px;
   letter-spacing: -0.07em;
   font-weight: bold;
+  line-height: 6rem;
   margin-bottom: 2rem; }
 
 h2,
@@ -586,14 +634,23 @@ h2,
   font-size: 48px;
   letter-spacing: -0.04em;
   font-weight: bold;
+  line-height: 1.4em;
   margin-bottom: 2rem; }
+  h2::before,
+  .h2::before {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - 1.6) * 0.5em); }
 
 h3,
 .h3 {
   font-family: "Inter", sans-serif;
-  font-size: 36px;
+  font-size: 32px;
   letter-spacing: -0.04em;
   font-weight: bold;
+  line-height: 1rem;
   margin-bottom: 2rem; }
 
 h4,
@@ -604,15 +661,16 @@ h4,
   letter-spacing: 0.065em;
   text-transform: uppercase;
   font-weight: bold;
+  line-height: 1em;
   margin-bottom: 2rem; }
 
-body,
-p {
+p,
+body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   letter-spacing: 0.04em;
   line-height: 1.5em;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 4rem; }
 
 a {
@@ -626,8 +684,8 @@ a {
 
 .lead {
   font-size: 36px;
-  line-height: 1.2em;
-  letter-spacing: -0.07em; }
+  line-height: 3rem;
+  letter-spacing: -0.05em; }
 
 .section-marker {
   border-left: 2px solid #000;
