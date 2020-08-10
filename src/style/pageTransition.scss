@@ -1,0 +1,51 @@
+.transition-wrapper {
+  position: fixed;
+
+  // transition-property: transform opacity;
+  // transition-duration: 500ms;
+  // transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 1;
+
+  // will-change: transform opacity;
+
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.transition-wrapper--exiting {
+  animation-name: transition-exiting;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+.transition-wrapper--entering {
+  animation-name: transition-entering--from-right;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes transition-entering--from-right {
+  0% {
+    // transform: translateX(100%);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    // transform: translateX(0%);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes transition-exiting {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
