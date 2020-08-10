@@ -12,8 +12,7 @@ gulp.task("dev", function () {
 });
 
 gulp.task("build", function () {
-  gulp.start("sass");
-  gulp.start("js");
+  gulp.parallel("sass", "js");
 });
 
 gulp.task("sass", function () {
