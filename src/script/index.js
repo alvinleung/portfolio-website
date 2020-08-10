@@ -126,9 +126,6 @@ const Router = {
     const expression = /(.+:\/\/)?([^\/]+)(\/.*)*/i;
     const matchedHost = expression.exec(url)[2];
 
-    console.log("matched host" + matchedHost);
-    console.log("location.hostname" + window.location.host);
-
     return matchedHost !== window.location.host;
   },
   isUrl: function (url) {

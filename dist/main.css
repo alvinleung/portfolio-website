@@ -184,13 +184,14 @@ a:active {
 .transition-wrapper {
   position: fixed;
   opacity: 1;
+  will-change: transform, opacity;
   height: 100vh;
   overflow-y: scroll; }
 
 .transition-wrapper--exiting {
   animation-name: transition-exiting;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  animation-duration: 500ms;
+  animation-duration: 200ms;
   animation-fill-mode: forwards; }
 
 .transition-wrapper--entering {
@@ -201,7 +202,7 @@ a:active {
 
 @keyframes transition-entering--from-right {
   0% {
-    transform: scale(1.2);
+    transform: scale(0.9);
     opacity: 0; }
   100% {
     transform: scale(1);
@@ -212,7 +213,7 @@ a:active {
     transform: scale(1);
     opacity: 1; }
   100% {
-    transform: scale(0.9);
+    transform: scale(1.2);
     opacity: 0; } }
 
 /*
