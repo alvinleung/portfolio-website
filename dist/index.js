@@ -126,7 +126,10 @@ const Router = {
     const expression = /(.+:\/\/)?([^\/]+)(\/.*)*/i;
     const matchedHost = expression.exec(url)[2];
 
-    return matchedHost !== window.location.hostname;
+    console.log("matched host" + matchedHost);
+    console.log("location.hostname" + window.location.host);
+
+    return matchedHost !== window.location.host;
   },
   isUrl: function (url) {
     //https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url
