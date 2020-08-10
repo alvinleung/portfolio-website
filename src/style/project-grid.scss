@@ -12,6 +12,7 @@
 .project-item {
   display: flex;
   flex-direction: column-reverse;
+
   @include viewportLargerThan($breakpoint-l) {
     flex-direction: row;
   }
@@ -21,54 +22,77 @@
   background: none;
   transition-property: color opacity;
 
+  margin-bottom: $spacing-m;
+
   &:hover {
     color: $color-accent;
+    .project-item__description .caption {
+      border-color: $color-accent;
+    }
   }
   &:active,
   &:focus {
     color: $color-accent;
+    transform: scale(0.99);
   }
 
   .project-item__description {
+    flex: 1 1 25rem;
+    max-height: 15rem;
+
+    display: flex;
+    flex-direction: column;
+
     margin-right: $spacing-m; // gutter size
-    max-width: 20rem;
 
     h2 {
+      // border-top: $horizontal-sperator;
+      padding-top: $spacing-s;
+      @include viewportLargerThan($breakpoint-l) {
+        margin-top: 0rem;
+      }
+
       margin-bottom: 0;
     }
-    .caption {
-      margin-bottom: $spacing-xs;
-    }
     p {
-      margin-bottom: $spacing-m;
+      margin-top: 0rem;
+      margin-bottom: $spacing-s;
+    }
+    .caption {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+
+      padding-top: 0.5rem;
+      max-width: 50%;
+      border-top: $horizontal-sperator;
     }
   }
   .project-item__image {
     display: block;
     width: 100%;
-    height: 15rem;
-    margin-bottom: $spacing-xs;
 
     // the image height only scale with the viewport on larger screens
     // to prevent it from getting to squished on mobile
-    @include viewportLargerThan($breakpoint-l) {
-      height: 28vw;
-      margin-bottom: 1rem;
-    }
+    // @include viewportLargerThan($breakpoint-l) {
+    // height: 28vw;
+    // }
     overflow: hidden;
 
     // the actual image inside the image wrapper
     img {
       // fit the whole parent container
       width: 100%;
-      height: 100%;
+      // height: 100%;
       object-fit: cover;
 
+      transform: scale(1);
+      filter: grayscale(1);
+
       // for the animation
-      transition-property: transform;
+      transition-property: transform, filter;
       transition-timing-function: $easing--ease-out-expo; // ease out expo
       transition-duration: 500ms;
-      will-change: transform;
+      will-change: transform, filter;
     }
   }
 }
@@ -76,5 +100,6 @@
 .project-item:hover {
   .project-item__image img {
     transform: scale(1.1);
+    filter: grayscale(0);
   }
 }

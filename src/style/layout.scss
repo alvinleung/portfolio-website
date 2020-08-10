@@ -23,7 +23,7 @@ $breakpoint-nav-collapse: 500px;
   column-gap: $spacing-gutter;
 
   margin-left: 2rem;
-  margin-right: 0rem;
+  margin-right: 2rem;
 }
 
 // navigation side bar
@@ -34,6 +34,7 @@ $breakpoint-nav-collapse: 500px;
 // the main content section
 .main-container__main {
   grid-area: main;
+  overflow-x: hidden;
 }
 @include viewportLargerThan($breakpoint-l) {
   .main-container {
@@ -47,10 +48,10 @@ $breakpoint-nav-collapse: 500px;
 
 // the visual style of the both
 .nav,
-.main-container__main {
-  margin-top: $section-spacing;
+.main-container__main > .transition-wrapper {
+  // margin-top: $spacing-m;
   padding-top: $section-spacing;
-  border-top: $horizontal-sperator;
+  // border-top: $horizontal-sperator;
 }
 
 .seperator-top {

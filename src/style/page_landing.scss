@@ -3,19 +3,99 @@
  */
 
 @import "breakpoint.scss";
+@import "variables.scss";
 
 .hero {
-  margin-bottom: 16rem;
+  margin-bottom: 15vh;
 }
 
 .hero__headline {
   margin-top: 10vh;
   max-width: 10ch;
-  line-height: 1.1em;
+  line-height: 1.2em;
+
+  display: flex;
+  flex-wrap: wrap;
 
   font-size: 64px;
 
   @include viewportLargerThan($breakpoint-l) {
     font-size: 6vw;
+  }
+
+  // hide everything before animate
+  opacity: 0;
+}
+
+.hero__headline--animation {
+  opacity: 1 !important;
+}
+
+// headline word animation
+.hero__headline--animation span {
+  display: block;
+  overflow-y: hidden;
+  height: 1.2em;
+  line-height: 01em;
+  padding-right: 0.2em;
+  padding-bottom: 0rem;
+
+  opacity: 1 !important;
+
+  span {
+    padding: 0rem;
+    // hidden below before
+    transform: translateY(1.2em);
+
+    animation-name: word-slide-animation;
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    opacity: 1 !important;
+  }
+}
+
+.hero__blurb {
+  animation-name: fade-up-animation;
+  animation-duration: 1000ms;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1300ms;
+
+  // initial state of the animation
+  opacity: 0;
+  transform: translateY(6em);
+}
+
+@keyframes word-slide-animation {
+  0% {
+    opacity: 1;
+    transform: translateY(1.2em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0em);
+  }
+}
+
+@keyframes appear-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(6em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
   }
 }

@@ -18,8 +18,12 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
   <!--loading react of the design viewer-->
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <link rel="stylesheet" href="designExplorer/css/designExplorer.css">
+
+  <!-- loading of the design viewer -->
+  <script src="designExplorer/js/webpackinclude.js"></script>
+  <script src="designExplorer/js/2.85ddc908.chunk.js"></script>
+  <script src="designExplorer/js/main.97466999.chunk.js"></script>
 
 </head>
 
@@ -29,7 +33,7 @@
       <!--the sticky side bar navigation-->
       <nav class="nav">
         <ul class="nav__nav-list">
-          <li><a class="nav__nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav__nav-link" href="index.html#projects">Projects</a></li>
           <li><a class="nav__nav-link" href="#">About</a></li>
           <li><a class="nav__nav-link" href="#">Resume</a></li>
           <li><a class="nav__nav-link" href="#">Extra</a></li>
@@ -37,48 +41,52 @@
       </nav>
     </aside>
     <div class="main-container__main">
-      <header class="hero">
-        <div class="h4">01 - Intro</div>
-        <h1 class="hero__headline">Alvin Leung UX/UI Designer from SFU</h1>
-        <p class="hero__burb">
-          <span class="material-icons">
-            arrow_downward
-          </span>
-          I speak HTML, Helvetica & Human Centred Design😉
-        </p>
+      <div class="transition-wrapper">
+        <header class="hero">
+          <div class="h4">01 - Intro</div>
+          <h1 class="hero__headline">Alvin Leung UX/UI Designer from SFU</h1>
+          <p class="hero__blurb">
+            <span class="material-icons">
+              arrow_downward
+            </span>
+            I speak HTML, Helvetica & Human Centred Design😉
+          </p>
 
-      </header>
-      <main>
-        <section id="projects">
-          <h2 class="h4">02 - Projects</h2>
-          <div class="project-container">
-            <a href="project-helpmate.html" class="project-item">
-              <div class="project-item__description">
-                <h2>HelpMate</h2>
-                <div class="caption">UX/UI Design, 2020</div>
-                <p>Build connections in the community one task at a time.</p>
-              </div>
-              <div class="project-item__image">
-                <img src="img/helpmate-art.png" alt="Help Mate App">
-              </div>
-            </a>
-            <a href="project-freegeek.html" class="project-item">
-              <div class="project-item__description">
-                <h2>Free Geek</h2>
-                <div class="caption">Interaction Design, 2020</div>
-                <p>Enrich volunteers' experience, empower the organisation.</p>
-              </div>
-              <div class="project-item__image">
-                <img src="img/project-freegeek/freegeek-cover.svg" alt="Help Mate App">
-              </div>
-            </a>
-          </div>
-        </section>
-      </main>
-      <footer class="caption">
-        Design and build by Alvin Leung <a target="blank" href="https://github.com/alvinleung/portfolio-website">see the
-          saucceeee 👨‍💻</a>
-      </footer>
+        </header>
+        <main>
+          <section id="projects">
+            <h2 class="h4">02 - Projects</h2>
+            <div class="project-container">
+              <a href="project-helpmate.html" class="project-item">
+                <div class="project-item__description">
+                  <h2>HelpMate</h2>
+                  <p>Build connections in the community one task at a time.</p>
+                  <div class="caption">UX/UI Design, 2020</div>
+                </div>
+                <div class="project-item__image">
+                  <img src="img/helpmate-art.png" alt="Help Mate App">
+                </div>
+              </a>
+              <a href="project-freegeek.html" class="project-item">
+                <div class="project-item__description">
+                  <h2>Free Geek</h2>
+                  <p>Enrich volunteers' experience, empower the organisation.</p>
+                  <div class="caption">Interaction Design, 2020</div>
+                </div>
+                <div class="project-item__image">
+                  <img src="img/project-freegeek/freegeek-cover.png" alt="Help Mate App">
+                </div>
+              </a>
+            </div>
+          </section>
+        </main>
+        <footer>
+          <p class="caption">
+            Design and build by Alvin Leung <a target="blank" href="https://github.com/alvinleung/portfolio-website">see
+              the saucceeee 👨‍💻</a>
+          </p>
+        </footer>
+      </div>
     </div>
   </div>
 </body>

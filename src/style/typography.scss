@@ -22,7 +22,11 @@ $vertical-spacing: 3rem;
 h1,
 .h1 {
   font-family: $font-family-main;
-  font-size: 96px;
+
+  font-size: 72px;
+  @include viewportLargerThan($breakpoint-s) {
+    font-size: 96px;
+  }
   letter-spacing: -0.07em;
   font-weight: bold;
 
@@ -51,7 +55,7 @@ h3,
   letter-spacing: -0.04em;
   font-weight: bold;
 
-  line-height: 1rem;
+  @include lineHeightCrop(1.2);
 
   margin-bottom: $spacing-s;
 }
@@ -75,6 +79,9 @@ body {
   font-size: 16px;
   letter-spacing: 0.04em;
   line-height: 1.5em;
+}
+
+p {
   margin-top: $spacing-s;
   margin-bottom: $spacing-m;
 }
@@ -98,7 +105,7 @@ a {
 
 .section-marker {
   @extend .h4;
-  border-left: $horizontal-sperator;
+  border-left: 2px solid $color-primary-darkest;
   padding-left: 0.5rem;
   margin-left: 0rem;
   margin-bottom: $spacing-m;
