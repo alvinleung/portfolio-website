@@ -1,8 +1,16 @@
 @import "breakpoint.scss";
+@import "variables.scss";
+@import "layout.scss";
 
 .nav {
   position: fixed;
-  background-color: #fff;
+  right: 2rem;
+  @include viewportLargerThan($breakpoint-nav-collapse) {
+    right: unset;
+  }
+
+  display: flex;
+  flex-direction: column;
 }
 .nav__nav-list {
   list-style: none;
@@ -11,4 +19,81 @@
 .nav__nav-link {
   // font-size: 1.5rem;
   // margin-bottom: 0.5rem;
+}
+
+.nav-body {
+  // it's a hidden menu on mobile
+  position: fixed;
+
+  top: 0rem;
+  right: 0rem;
+  bottom: 0rem;
+
+  background-color: $color-primary-lightest;
+
+  padding: 6rem 10vw;
+  z-index: 1;
+
+  transform: translateX(100%);
+
+  // transition properties
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-body--expanded {
+  transform: translateX(0%);
+}
+
+//
+// hamburger menu code
+//
+
+.hamburger-menu-toggle {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0rem;
+  margin-top: 0.1rem;
+  align-self: flex-end;
+
+  background: none;
+
+  display: block;
+  @include viewportLargerThan($breakpoint-nav-collapse) {
+    display: none;
+  }
+
+  z-index: 10;
+}
+
+.hamburger-menu-toggle > div {
+  display: block;
+
+  width: 100%;
+  height: 0.15em;
+  padding: 0em;
+  margin-bottom: 0.6em;
+  transition-property: transform, background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  background-color: $color-primary-dark;
+  background-blend-mode: difference;
+}
+
+.hamburger-menu-toggle--cross > div:nth-child(2) {
+  transform: rotateZ(-45deg);
+  background-color: $color-primary-dark;
+}
+
+.hamburger-menu-toggle--cross > div:nth-child(1) {
+  transform: translate(0em, 0.75em) rotateZ(-45deg);
+  background-color: $color-primary-dark;
+  opacity: 0;
+}
+
+.hamburger-menu-toggle--cross > div:nth-child(3) {
+  transform: translate(0em, -0.75em) rotateZ(45deg);
+  background-color: $color-primary-dark;
 }

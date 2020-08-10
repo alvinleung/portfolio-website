@@ -1,6 +1,7 @@
 window.addEventListener("load", (e) => {
   setupPageTransition(".transition-wrapper");
   setupRouting();
+  setupHamburgerMenu();
 });
 
 window.addEventListener("pagedidload", function (e) {
@@ -353,10 +354,72 @@ function setupTextAnimation() {
 }
 // ============================================
 //
-// Center transform origin to scren
+// Center transform origin to screen
 //
 // ============================================
 function recenterTransformOrigin(elm) {
   const currentScrollPos = window.pageYOffset + window.innerHeight / 2;
   elm.style.transformOrigin = `center ${currentScrollPos}px`;
 }
+
+// ============================================
+//
+// Hamburger Menu
+//
+// ============================================
+function setupHamburgerMenu() {
+  let hamburgerMenuToggle = document.querySelector(".hamburger-menu-toggle");
+  let navMenu = document.querySelector(".nav-body");
+
+  hamburgerMenuToggle.addEventListener("click", (e) => {
+    if (
+      hamburgerMenuToggle.classList.contains("hamburger-menu-toggle--cross")
+    ) {
+      // meaning hamburger already opened
+      hamburgerMenuToggle.classList.remove("hamburger-menu-toggle--cross");
+      navMenu.classList.remove("nav-body--expanded");
+      unlockBodyScroll();
+    } else {
+      // hamburger menu is collapsed
+      hamburgerMenuToggle.classList.add("hamburger-menu-toggle--cross");
+      navMenu.classList.add("nav-body--expanded");
+      lockBodyScroll();
+    }
+  });
+}
+// ============================================
+//
+// lock the body content when menu/modal is open
+//
+// ============================================
+function lockBodyScroll() {
+  const bodyWrapper = document.querySelector(".body-content-wrapper");
+  bodyWrapper.style.overflowY = "hidden";
+
+  // set the transform origin to the center of teh screen
+  recenterTransformOrigin(bodyWrapper);
+  bodyWrapper.classList.add("body-content-wrapper--dimmed");
+}
+
+function unlockBodyScroll() {
+  const bodyWrapper = document.querySelector(".body-content-wrapper");
+  bodyWrapper.style.overflowY = "scroll";
+
+  // set the transform origin to the center of teh screen
+  recenterTransformOrigin(bodyWrapper);
+  bodyWrapper.classList.remove("body-content-wrapper--dimmed");
+}
+
+// Trick adapted from the following link
+// purpose is to stop the menu animation showing when window resizing
+// https://css-tricks.com/stop-animations-during-window-resizing/
+//
+// Refer to _reset.css for the css component of this script
+let resizeTimer;
+window.addEventListener("resize", () => {
+  document.body.classList.add("resize-animation-stopper");
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    document.body.classList.remove("resize-animation-stopper");
+  }, 400);
+});
