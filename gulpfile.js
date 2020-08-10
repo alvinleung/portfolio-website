@@ -11,7 +11,7 @@ gulp.task("dev", function () {
   gulp.watch("./src/script/*.js", gulp.series("js"));
 });
 
-gulp.task("build", function () {
+gulp.task("build", async function () {
   gulp.parallel("sass", "js");
 });
 
