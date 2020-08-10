@@ -29,7 +29,9 @@ $breakpoint-nav-collapse: 500px;
 // navigation side bar
 .main-container__side-bar {
   display: none;
-  grid-area: side;
+  grid-area: main;
+  opacity: 1;
+  z-index: 10;
 }
 // the main content section
 .main-container__main {
@@ -43,6 +45,7 @@ $breakpoint-nav-collapse: 500px;
   }
   .main-container__side-bar {
     display: block;
+    grid-area: side;
   }
 }
 

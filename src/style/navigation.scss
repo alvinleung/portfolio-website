@@ -1,5 +1,8 @@
+@import "breakpoint.scss";
+
 .nav {
   position: fixed;
+  background-color: #fff;
 }
 .nav__nav-list {
   list-style: none;

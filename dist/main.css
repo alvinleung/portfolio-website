@@ -62,7 +62,9 @@ a:active {
 
 .main-container__side-bar {
   display: none;
-  grid-area: side; }
+  grid-area: main;
+  opacity: 1;
+  z-index: 10; }
 
 .main-container__main {
   grid-area: main;
@@ -73,7 +75,8 @@ a:active {
     grid-template-columns: repeat(8, 1fr);
     grid-template-areas: "side main main main main main main main main"; }
   .main-container__side-bar {
-    display: block; } }
+    display: block;
+    grid-area: side; } }
 
 .nav,
 .main-container__main > .transition-wrapper {
@@ -163,8 +166,17 @@ a:active {
   height: 100%; }
 
 
+/*
+ *
+ * A CSS file that mananges all the break points
+ * 
+ * Referenced Article
+ * https: //medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2
+ * 
+ */
 .nav {
-  position: fixed; }
+  position: fixed;
+  background-color: #fff; }
 
 .nav__nav-list {
   list-style: none; }
@@ -453,7 +465,9 @@ body {
 
 .main-container__side-bar {
   display: none;
-  grid-area: side; }
+  grid-area: main;
+  opacity: 1;
+  z-index: 10; }
 
 .main-container__main {
   grid-area: main;
@@ -464,7 +478,8 @@ body {
     grid-template-columns: repeat(8, 1fr);
     grid-template-areas: "side main main main main main main main main"; }
   .main-container__side-bar {
-    display: block; } }
+    display: block;
+    grid-area: side; } }
 
 .nav,
 .main-container__main > .transition-wrapper {

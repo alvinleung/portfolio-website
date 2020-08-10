@@ -114,6 +114,20 @@ const Router = {
       this._removeHashFromUrl(this._removeBaseDirectoryFromURL(url))
     );
   },
+  isExternalUrl: function (url) {
+    //https://www.pixelstech.net/article/1339769805-Get-hostname-from-a-URL-using-JavaScript
+    const expression = /(.+:\/\/)?([^\/]+)(\/.*)*/i;
+    const matchedHost = expression.exec(url)[2];
+
+    return matchedHost === window.location.hostname;
+  },
+  isUrl: function (url) {
+    //https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url
+    const expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+    const regex = new RegExp(expression);
+
+    return url.match(regex);
+  },
 };
 
 function setupPageTransition(transitionContainerSelector) {
@@ -271,6 +285,13 @@ function captureLinkClicks(allLinks, callback) {
     ) {
       return; // link that refrencing current page "#", return
     }
+
+    // don't capture links that connect to external site
+    if (Router.isExternalUrl(elm.href)) return;
+
+    // don't capture links that has the intention of opening in a new window
+    if (elm.getAttribute("target") === "blank") return;
+
     // capture all the links
     elm.addEventListener("click", clickCaptureHandler, true);
   });
@@ -309,6 +330,12 @@ function setupTextAnimation() {
 
     containerSpan.appendChild(wordSpan);
     elm.appendChild(containerSpan);
+
+    wordSpan.addEventListener("animationend", (e) => {
+      if (index === words.length - 1) {
+        // final animation end
+      }
+    });
   });
 
   elm.classList.add("hero__headline--animation");
