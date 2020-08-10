@@ -51,7 +51,7 @@ function setupRouting() {
 // simple router setup
 const Router = {
   _routes: {},
-  baseDirectory: "",
+  baseDirectory: "dist",
   _currentRoute: "", // base url now, equals to "/index.html" or "/" route
   _prevRoute: {
     route: this._currentRoute,
@@ -244,7 +244,7 @@ function firePageUnloadEvent(fromUrl, toUrl) {
 }
 
 function captureLinkClicks(allLinks, callback) {
-  const currentPageLocation = window.location.href; // current page full URL
+  //const currentPageLocation = window.location.href; // current page full URL
 
   const cleanupEventListener = function () {
     allLinks.forEach((elm) => {
@@ -257,6 +257,9 @@ function captureLinkClicks(allLinks, callback) {
     console.log("User Clicked on link " + this.href);
 
     const linkTarget = this.href;
+
+    console.log(Router.getRelativePath(linkTarget));
+
     // console.log(Router.getRelativePath(window.location.href));
     // console.log(Router.getRelativePath(linkTarget));
     if (
@@ -285,6 +288,7 @@ function captureLinkClicks(allLinks, callback) {
     ) {
       return; // link that refrencing current page "#", return
     }
+    console.log(elm.href);
 
     // don't capture links that connect to external site
     if (Router.isExternalUrl(elm.href)) return;
