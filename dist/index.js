@@ -51,7 +51,7 @@ function setupRouting() {
 // simple router setup
 const Router = {
   _routes: {},
-  baseDirectory: "dist",
+  baseDirectory: "",
   _currentRoute: "", // base url now, equals to "/index.html" or "/" route
   _prevRoute: {
     route: this._currentRoute,
