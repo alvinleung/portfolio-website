@@ -48,10 +48,17 @@ function setupRouting() {
 //    };
 //  });
 
+function isLocalServer() {
+  return (
+    window.location.hostname === "127.0.0.1" ||
+    window.location.hostname === "localhost"
+  );
+}
+
 // simple router setup
 const Router = {
   _routes: {},
-  baseDirectory: this.isLocalserver() ? "dist" : "",
+  baseDirectory: isLocalServer() ? "dist" : "",
   _currentRoute: "", // base url now, equals to "/index.html" or "/" route
   _prevRoute: {
     route: this._currentRoute,
@@ -127,12 +134,6 @@ const Router = {
     const regex = new RegExp(expression);
 
     return url.match(regex);
-  },
-  isLocalServer: function () {
-    return (
-      window.location.hostname === "127.0.0.1" ||
-      window.location.hostname === "localhost"
-    );
   },
 };
 
