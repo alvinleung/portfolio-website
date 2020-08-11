@@ -368,25 +368,43 @@ function recenterTransformOrigin(elm) {
 //
 // ============================================
 function setupHamburgerMenu() {
-  let hamburgerMenuToggle = document.querySelector(".hamburger-menu-toggle");
-  let navMenu = document.querySelector(".nav-body");
+  const hamburgerMenuToggle = document.querySelector(".hamburger-menu-toggle");
+  const navMenu = document.querySelector(".nav-body");
 
   hamburgerMenuToggle.addEventListener("click", (e) => {
     if (
       hamburgerMenuToggle.classList.contains("hamburger-menu-toggle--cross")
     ) {
       // meaning hamburger already opened
-      hamburgerMenuToggle.classList.remove("hamburger-menu-toggle--cross");
-      navMenu.classList.remove("nav-body--expanded");
-      unlockBodyScroll();
+      collapseHamburgerMenu();
     } else {
       // hamburger menu is collapsed
-      hamburgerMenuToggle.classList.add("hamburger-menu-toggle--cross");
-      navMenu.classList.add("nav-body--expanded");
-      lockBodyScroll();
+      expandHamburgerMenu();
     }
   });
+
+  // collapse menu when link click
+  document.querySelectorAll(".nav__nav-link").forEach((elm) => {
+    elm.addEventListener("click", function () {
+      collapseHamburgerMenu();
+    });
+  });
+
+  function expandHamburgerMenu() {
+    hamburgerMenuToggle.classList.add("hamburger-menu-toggle--cross");
+    navMenu.classList.add("nav-body--expanded");
+    lockBodyScroll();
+  }
+  function collapseHamburgerMenu() {
+    if (hamburgerMenuToggle.classList.contains("hamburger-menu-toggle--cross"))
+      hamburgerMenuToggle.classList.remove("hamburger-menu-toggle--cross");
+
+    if (navMenu.classList.contains("nav-body--expanded"))
+      navMenu.classList.remove("nav-body--expanded");
+    unlockBodyScroll();
+  }
 }
+
 // ============================================
 //
 // lock the body content when menu/modal is open

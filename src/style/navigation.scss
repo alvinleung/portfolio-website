@@ -17,8 +17,13 @@
 }
 
 .nav__nav-link {
-  // font-size: 1.5rem;
-  // margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+
+  @include viewportLargerThan($breakpoint-nav-collapse) {
+    font-size: 1rem;
+    margin-bottom: 0rem;
+  }
 }
 
 .nav-body {
@@ -40,6 +45,13 @@
   transition-property: transform;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+
+  @include viewportLargerThan($breakpoint-nav-collapse) {
+    transform: none;
+    padding: 2rem 0rem;
+    right: unset;
+    transition-property: none;
+  }
 }
 .nav-body--expanded {
   transform: translateX(0%);
