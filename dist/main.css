@@ -52,6 +52,10 @@ a:active {
  * The main two columns layout grid of the website
  * 
  */
+head {
+  display: flex;
+  flex-direction: column; }
+
 .main-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -224,6 +228,10 @@ a:active {
  * The main two columns layout grid of the website
  * 
  */
+head {
+  display: flex;
+  flex-direction: column; }
+
 .main-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -452,6 +460,8 @@ a:active {
 
 .transition-wrapper {
   position: fixed;
+  display: flex;
+  flex-wrap: wrap;
   opacity: 1;
   will-change: transform, opacity;
   height: 100vh;
@@ -460,13 +470,13 @@ a:active {
 .transition-wrapper--exiting {
   animation-name: transition-exiting;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  animation-duration: 200ms;
+  animation-duration: 300ms;
   animation-fill-mode: forwards; }
 
 .transition-wrapper--entering {
   animation-name: transition-entering--from-right;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  animation-duration: 500ms;
+  animation-duration: 600ms;
   animation-fill-mode: forwards; }
 
 @keyframes transition-entering--from-right {
@@ -733,6 +743,10 @@ body {
  * The main two columns layout grid of the website
  * 
  */
+head {
+  display: flex;
+  flex-direction: column; }
+
 .main-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);

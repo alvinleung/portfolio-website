@@ -1,6 +1,12 @@
 .transition-wrapper {
   position: fixed;
 
+  // hack to make the container width span according to it's parent
+  display: flex;
+  flex-wrap: wrap;
+  // right: 0rem;
+  // left: 10rem;
+
   // transition-property: transform opacity;
   // transition-duration: 500ms;
   // transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
@@ -15,14 +21,14 @@
 .transition-wrapper--exiting {
   animation-name: transition-exiting;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  animation-duration: 200ms;
+  animation-duration: 300ms;
   animation-fill-mode: forwards;
 }
 
 .transition-wrapper--entering {
   animation-name: transition-entering--from-right;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  animation-duration: 500ms;
+  animation-duration: 600ms;
   animation-fill-mode: forwards;
 }
 

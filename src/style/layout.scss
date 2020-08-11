@@ -15,6 +15,12 @@
 
 $breakpoint-nav-collapse: $breakpoint-l;
 
+// head in a document
+head {
+  display: flex;
+  flex-direction: column;
+}
+
 // layout container
 .main-container {
   display: grid;

@@ -136,6 +136,19 @@ const Router = {
 
     return url.match(regex);
   },
+  isValidHttpUrl: function (string) {
+    // adapted from
+    //https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
+    let url;
+
+    try {
+      url = new URL(string);
+    } catch (_) {
+      return false;
+    }
+
+    return url.protocol === "http:" || url.protocol === "https:";
+  },
 };
 
 function setupPageTransition(transitionContainerSelector) {
@@ -266,10 +279,6 @@ function captureLinkClicks(allLinks, callback) {
 
     const linkTarget = this.href;
 
-    console.log(Router.getRelativePath(linkTarget));
-
-    // console.log(Router.getRelativePath(window.location.href));
-    // console.log(Router.getRelativePath(linkTarget));
     if (
       Router.getRelativePath(linkTarget) ===
       Router.getRelativePath(window.location.href)
@@ -290,13 +299,17 @@ function captureLinkClicks(allLinks, callback) {
     // only capture links that leads to other pages
     if (!elm.href) return;
     //if (elm.href === currentPageLocation) return; // link to this particular page, return
+    console.log(elm.href);
+
+    // don't capture linksfor other protocal link mailto/torrent/ftp etc.
+    if (!Router.isValidHttpUrl(elm.href)) return;
+
     if (
       Router.cleanResourcePath(Router.getRelativePath(elm.href)) ===
       Router.cleanResourcePath(Router.getRelativePath(window.location.href))
     ) {
       return; // link that refrencing current page "#", return
     }
-    console.log(elm.href);
 
     // don't capture links that connect to external site
     if (Router.isExternalUrl(elm.href)) return;
